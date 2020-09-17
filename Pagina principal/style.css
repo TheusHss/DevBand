@@ -1,0 +1,67 @@
+.cabecario{
+
+    width: 100%;
+    height: 137px;
+    background-color: rgba(255, 255, 255, 0.561);
+ }
+#logo_header{
+    width: 10%;
+    height: 100%;
+}
+body{
+    background-image: url(MTPYKCHHWMWBTYPBID7EKSYWQM.jpg);
+    background-image: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#sup:hover{
+cursor: pointer;
+opacity: 0.3;
+}
+#sup{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right:0.5%;
+   height: 25px;
+   letter-spacing: 3px;
+    color: blue;
+    padding-top:4%;
+    font-size: 130%;
+    float: right;
+}
+#ctrP:hover{
+    cursor: pointer;
+transition: 0.5s;
+opacity: 0.5;
+}
+
+#ctrP{
+    transition: 0.5s;
+    font-style: italic;
+    color:black;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    border-radius: 50px 3px;
+    border: 10px rgb(255, 0, 0) solid;
+    text-align: center;
+    margin-top: 3%;
+    width: 15%;
+    background-color: rgba(255, 255, 255, 0.616);
+    height: 134px;
+    box-shadow: rgba(0, 0, 0, 0.459) 7px 9px 6px 2px;
+
+}
+#mrc{
+   width: 15%;
+    float: right;
+}
+#sobreresult{
+    font-size: 329%;
+    top: 22%;
+    left: 50%;
+    position: absolute;
+    color: rgb(255, 115, 0);
+    background-color: rgba(0, 0, 0, 0.52);
+}
