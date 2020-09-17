@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="calculadora.css">
+    <title>calculadora</title>
+</head>
+<body>
+    <div class="simulador">
+        <h1>
+            Faça seu orçamento <br>
+            Simule a quantidade de sensores com a gente
+        </h1>
+        <input type="text" placeholder="Quantidade de sensor" id="qtdSensor">
+        <br>
+        <button onclick="somar()">Calcular</button> <br>
+    </div>
+    <div class="boxResultado">
+        <div id="divResultado" style="display: none">
+            <b>Valor do sensor</b>: <span id="vlrSensor"></span> <br>
+            <b>Mão de obra:</b> <span id="vlrObra"></span> <br>
+            <b>Valor total:</b> <span id="vlrTotal"></span>
+            <i id="mensagem" style="display: none">*Os valores da mão de obra são fixos de R$100,00.</i>
+        </div>
+    </div>
+    
+</body>
+</html>
+<script>
+    function somar() {
+        var sensor = Number(qtdSensor.value);
+        var valorSensor = 54.90;
+        var obra = 100.00;
+        var somaTudo = (sensor * valorSensor) + obra;
+
+        divResultado.style.display = 'block';
+        mensagem.style.display = 'block';
+        vlrSensor.innerHTML = `${valorSensor.toFixed(2)}`;
+        vlrObra.innerHTML = `${obra.toFixed(2)}`;
+        vlrTotal.innerHTML = `${somaTudo.toFixed(2)}`;
+    }  
+</script>
