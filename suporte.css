@@ -1,0 +1,47 @@
+header img {
+    width: 280px;
+}
+
+header a {
+    float: right;
+    margin: 50px 30px 8px 12px;
+    font-size: 25px;
+    background-color: yellow;
+}
+
+header {
+    border: 3px orange solid; background: rgba(128, 0, 128, 0.63);
+}
+
+main { font-weight: 950;
+    background-image: url("./revolucao.jpg");
+    background-size: cover;
+    height: 391px;
+}
+
+.cabecalho {     
+    border: 5px black solid;
+    width: 238px;
+    height: 224px;
+    background: rgba(0, 0, 0, 0.13);
+    color: yellow;
+}
+
+.dados  {
+    margin-left: 9px;
+}
+
+footer { 
+    border: 5px lime solid;
+    background: mediumaquamarine;
+    font-weight: 900;
+    height: 68px;
+}
+footer b { 
+    font-size: 20px; background-color:black; color: yellow;
+}
+
+body {
+
+    margin: 0;
+}
