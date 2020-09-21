@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Dorival</title>
+</head>
+<body>
+    Quantos Sensores voce deseja ?<br>
+    <input id="pnome" type="text" placeholder="Sensores" onkeyup="somar()">
+    <br>
+    <span id="resultado"></span>
+    
+</body>
+</html>
+
+<script>
+     function somar(){
+        
+        var Sensores = Number(pnome.value);
+        var valorsen = 5.50;
+        var maosen = 100;
+        var somar2 = (Sensores * valorsen);
+        var somar3 = (maosen * Sensores);
+        var somar = (somar2) + (somar3);
+        resultado.innerHTML =  ` Voce escolheu ${Sensores} Equipamento(s)<br> o valor do(s) equipamento(s) ficaram ${somar2} Reais<br> o valor da mão de obra ficou ${somar3} Reais<br> o valor total ficou ${somar.toFixed(2)} Reais`; 
+
+     }
+        
+        
+     
+
+     
+
+
+
+</script>
