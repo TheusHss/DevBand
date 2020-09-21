@@ -1,0 +1,34 @@
+.quantidade { border: lime solid 4px; 
+    width: 500px;
+    height: 300px;
+    background: mediumaquamarine;
+    text-align: center;
+    margin:150px 35% 0 35%;    
+}
+
+body   { background-image: url("simulador.jpg"); 
+    background-size: cover;
+}
+
+.quantidade p {
+    margin: 0 0 0 125px;
+    font-size: 20px;
+    font-weight: 900;
+    background: yellow;
+    color: red;
+    width: 250px;    
+}
+
+.quantidade input { width: 200px;
+height: 25px;
+text-align: center;
+font-size: large;
+font-weight: bold;
+background: chartreuse;
+}
+
+.valores_individuais {
+font-size: 18px;
+  
+
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simluador</title>
+    
+    <link rel="stylesheet" href="simulador.css">
+
+</head>
+<body>
+
+    <div class="quantidade">
+
+       <h1>
+            Simulador financeiro
+       </h1>
+
+        <br>
+        <p>
+            Quantidade de Sensores
+        </p>
+
+        <br>
+        <input onchange="calcular()" type="text" id="quantidade_sensores">     
+
+        <div class="valores_individuais" id="resultado" style="display: none;">
+        </div>
+
+        <div style="background: yellow; color: red;">
+
+                  </div>
+
+    </div>
+    
+
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        var quantidade=Number(quantidade_sensores.value);
+        var preco= 89.00;
+        var mao_obra = 50.39;
+        var somar = (quantidade * preco) + mao_obra;
+        resultado.style.display='block';
+        resultado.innerHTML=
+        `<b>Preço do Produto:<u>R$ ${preco}</u> <br>
+        Mão de Obra:<u>R$ ${mao_obra}</u><br>
+        <div style = "background: yellow; color: red;"> Prazo de entrega: 15 dias </div> <br>
+        Valor Total:<u>R$ ${somar.toFixed(2)}</u></b>`;
+                
+    }
+    
+</script>
