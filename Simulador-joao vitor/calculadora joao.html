@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    Insira o total de pacientes por ano: <br>
-    
-    <input id="P1"> <br>
-    
-    Insira o total de Alas em seu hospital: <br>
-    <input id="P2"><br>
+    <div class="box">
+            Insira o total de pacientes por ano: <br>
+            
+            <input id="P1"> <br>
 
-   <button onclick="calcular()">calcular</button><br>
-
-   <div id="resp"></div>
-
+            Insira o total de Alas em seu hospital: <br>
+            <input id="P2"><br>
+            
+            <button onclick="calcular()">calcular</button><br>
+          
+            <div id="resp"></div>
+    </div>
 </body>
 </html>
 <script>
-   
-    
+
 function calcular() {
     var A1 = Number(P1.value)
     var A2 = Number(P2.value)
     
-    var hosp = (A2 * 104.1)
+    var hosp = (A2 * 100)
     var hosp1 = hosp - (hosp * 0.40) 
     var hosp2 = hosp - (hosp * 0.20) 
     
-    var conta = A1 * 0.30
-    var conta2 = conta * 0.50
+    var conta = A1 * 0.10
+    var conta2 = conta * 0.75
 
-     
     if(A2 > 30){
         resp.innerHTML = `Seu hospital é grande logo nossa solução custará R$${hosp} Reais <br>`
 } 
     else if(A2 > 10){
         resp.innerHTML= `Seu hospital é médio logo nossa solução custará R$${hosp2} Reais<br>`
 }
-else{
-    resp.innerHTML= `Seu hospital é pequeno logo nossa solução custará R$${hosp1} Reais<br>`
+    else{
+        resp.innerHTML= `Seu hospital é pequeno logo nossa solução custará R$${hosp1} Reais<br>`
 }
 
 resp.innerHTML += `E com a nossa solução o seu hospital pode ajudar cerca de ${conta2} pacientes a mais anualmente`

@@ -1,0 +1,61 @@
+body {
+    background-image: url("teste.png");
+    font-family: 'Merriweather', serif;
+    background-size: cover;
+}
+.box {
+    background-image: url("fundo_box.jpg");
+    background-position: 0.5;
+    background-size: cover;
+    border: 1px black solid;
+    width: 450px;
+    margin: 210px auto 5px 35%;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px;
+}
+.box input {
+    width: 320px;
+    height: 30px;
+    outline: none;
+}
+.box button {
+    position: relative;
+    background-color: #70a0d8;
+    border: none;
+    font-size: 18px;
+    color: rgb(24, 23, 23);
+    width: 90px;
+    height: 35px;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    font-weight: 700;
+    margin: 8px;
+  }
+  
+.box button:after {
+    content: "";
+    background: #03016e;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 2s
+  }
+  
+.box button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 0.5;
+    transition: 0s
+  }
+.resp {
+    width: 390px;
+}
