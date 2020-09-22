@@ -5,11 +5,10 @@ body {
 }
 .box {
     background-image: url("fundo_box.jpg");
-    background-position: 0.5;
     background-size: cover;
     border: 1px black solid;
     width: 450px;
-    margin: 210px auto 5px 35%;
+    margin: 175px auto 5px 35%;
     border-radius: 10px;
     text-align: center;
     font-size: 18px;
