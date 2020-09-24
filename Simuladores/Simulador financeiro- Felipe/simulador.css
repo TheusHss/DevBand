@@ -1,0 +1,85 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-image: url("https://www.casadopapeldeparede.com.br/images/p/jetaime/26-05217-20.jpg");
+}
+.navbar{
+    height: 100px;
+    background: rgb(47, 47, 47);
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+h2{
+    float: left;
+    margin: none;
+    color: white;
+    padding-top: 5px;
+}
+.dev{
+    font-size: 30px;
+}
+.simulador{
+    color: tomato;
+}
+ul{
+    float: right;
+    color: white;
+    list-style: none;
+    margin: auto;
+    margin-right: 80px;
+}
+li{
+    float: left;
+    margin: 8px;
+}
+.login{
+    margin-left: 85px;
+    padding: 20px ;
+    margin-top: -14px;
+    margin-right: -20px;
+}
+a:hover{
+    color: tomato;
+    transition: 0.5s;
+}
+.cadastro{
+    margin-left: 12px;
+    padding: 20px;
+    margin-top: -14px;
+    float: right;
+    transition: 0.5s;
+}
+.cadastro:hover{
+    background: rgb(0, 0, 0);
+    transition: 0.5s;
+}
+.input{
+    text-align: center;      
+    margin: 10% 30%;
+    padding: 10px;
+    border: black solid;
+    background: rgb(26, 25, 25);
+}
+#sensores{
+    height: 20px;
+}
+button {
+    background: black;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+#resultado{
+    margin: 0px 10%;
+    display: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: white;
+}
+a{
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+}
