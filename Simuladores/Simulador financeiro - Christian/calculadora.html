@@ -18,12 +18,13 @@
         <br>
         <button onclick="somar()">Calcular</button> <br>
     </div>
-    <div class="boxResultado">
-        <div id="divResultado" style="display: none">
-            <b>Valor do sensor</b>: <span id="vlrSensor"></span> <br>
+    <div class="boxResultado" style="display: none" id="boxResultado">
+        <div id="divResultado">
+            <b>Valor por sensor</b>: <span id="vlrSensor"></span> <br>
             <b>Mão de obra:</b> <span id="vlrObra"></span> <br>
+            <b>Desconto: </b><span id="vlrDesconto"></span> <br>
             <b>Valor total:</b> <span id="vlrTotal"></span>
-            <i id="mensagem" style="display: none">*Os valores da mão de obra são fixos de R$100,00.</i>
+            <i id="mensagem" style="display: none"></i>
         </div>
     </div>
     
@@ -32,14 +33,17 @@
 <script>
     function somar() {
         var sensor = Number(qtdSensor.value);
-        var valorSensor = 54.90;
-        var obra = 100.00;
-        var somaTudo = (sensor * valorSensor) + obra;
+        var valorSensor = 54.69;
+        var desconto = valorSensor * 0.25;
+        var obra = 78.95;
+        var somaTudo = (sensor * obra) - (valorSensor * 0.25);
 
-        divResultado.style.display = 'block';
+        boxResultado.style.display = 'block';
         mensagem.style.display = 'block';
+        mensagem.innerHTML = `Qualquer dúvida, contate nossa equipe por telefone ou email`;
         vlrSensor.innerHTML = `${valorSensor.toFixed(2)}`;
         vlrObra.innerHTML = `${obra.toFixed(2)}`;
+        vlrDesconto.innerHTML = `${desconto.toFixed(2)}`;
         vlrTotal.innerHTML = `${somaTudo.toFixed(2)}`;
     }  
 </script>
