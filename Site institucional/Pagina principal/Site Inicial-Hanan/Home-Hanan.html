@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevBand-Home</title>
+    <link rel="stylesheet" href="estillos-Hanan.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <img class="img" src="logo.png" alt="logo da empresa">
+        <div class="container">  
+           <ul>
+               <li><a href="Sensores-Hanan.html">Sensores</a></li>
+               <li>Registros</li>
+               <li>Contratar <br>Pedido</li>
+               <li>Acesso <br>Rápido</li>
+               <li>Home</li>
+           </ul>
+        </div>
+    </div>
+    <center>
+    <div class="medio">
+        <h1>Seja bem vindo à DevBand!</h1> <br><br>
+        Clique em saiba mais e conheça algumas curiosidades sobre nossa empresa e nossos objetivos <br><br>
+        <button onclick="sabermais()">Saiba mais</button>
+    </div>
+    <div id="saber">
+    </div>
+</center>
+</body>
+</html>
+<script>
+function sabermais(){
+    saber.innerHTML=`Nós da DevBand fazemos a instalação e o monitoramento de sensores de <b>Temperatura</b> e <b>Humidade</b>
+    para as indústrias farmacêuticas`;    
+}
+</script>
