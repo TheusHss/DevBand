@@ -1,7 +1,8 @@
-CREATE DATABASE devBand;
-create TABLE hospital (
-idHospital int primary key auto_increment,
-nomeHospital varchar (40),
+CREATE DATABASE DevBand;
+
+create TABLE  Farmacia (
+idFarmacia int primary key auto_increment,
+nomeFarmacia varchar (40),
 CNPJ char (14) not null,
 CEP char (8) not null, 
 endereco varchar (50),
@@ -14,8 +15,8 @@ nome varchar (50),
 data_nasc date, 
 cpf char (11) not null,	
 Email varchar (60),
-Fk_hospital int, 
-foreign key (Fk_hospital) references hospital (idHospital)
+Fk_farmacia int, 
+foreign key (Fk_farmacia) references hospital (idfarmacia)
   );
   
   create table sensor (
@@ -23,8 +24,8 @@ foreign key (Fk_hospital) references hospital (idHospital)
   ala varchar (30),
   status_sensor varchar (10),
   check (status_sensor = "inativo" or status_sensor = "ativo" or status_sensor = "manutencao"),
-  Fk_hospital int, 
-  foreign key (Fk_hospital) references hospital (idHospital)
+  Fk_farmacia int, 
+  foreign key (Fk_farmacia) references hospital (idFarmacia)
   );
   
   create table registro (
