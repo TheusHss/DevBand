@@ -1,54 +1,151 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style/home.css" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Roboto&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./src/style/index.css" />
-
-    <title>DevBand</title>
+    <title>Document</title>
   </head>
   <body>
-    <div class="header">
-      <div class="header-container">
-        <img src="src/assets/logo.png" />
-        <ul class="navbar">
-          <li class="navitem"><a>Home</a></li>
-          <li class="navitem"><a>Sobre</a></li>
-          <li class="navitem"><a>Contato</a></li>
-          <li class="navitem"><a>Login</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="content-container">
-        <div class="info">
-          <span class="title"
-            >O principal software para a indústria farmacêutica.</span
-          >
-          <p>
-            Descubra as nossas soluções e pare agora mesmo de ter prejuízo em
-            sua fábrica farmacêutica. Software de fácil entendimento que auxilia
-            nas suas tarefas diárias, monitorando a temperatura e umidade do
-            ambiente.
-          </p>
+    <div class="container">
+      <header>
+        <div class="header-container">
+          <img src="src/assets/logo.png" />
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#company">Sobre</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Registre-se</a></li>
+          </ul>
         </div>
-        <img src="src/assets/undraw_medicine_b1ol.svg" />
-      </div>
-    </div>
+      </header>
 
-    <div class="footer">
-      <div class="footer-container">
-        <div>
-          <span>DevBand - Todos os direitos reservados.</span>
+      <section class="content">
+        <div class="content-container">
+          <div class="content-container-about">
+            <h1>O principal software para a indústria farmacêutica.</h1>
+            <p>
+              Descubra as nossas soluções e pare agora mesmo de ter prejuízo em
+              sua fábrica farmacêutica. Software de fácil entendimento que
+              auxilia nas suas tarefas diárias, monitorando a temperatura e
+              umidade do ambiente.
+            </p>
+          </div>
+          <div class="content-container-img">
+            <img src="src/assets/undraw_medicine_b1ol.svg" />
+          </div>
         </div>
-      </div>
+      </section>
+
+      <section class="company" id="company">
+        <div class="company-container">
+          <div class="company-container-about"></div>
+
+          <div class="company-container-contributor">
+            <h1 class="company-container-contributor-title">
+              Contribuidores da empresa
+            </h1>
+
+            <div class="company-card-contributor-container">
+              <div class="company-card-contributor">
+                <div class="company-card-contributor-box-img">
+                  <img src="./src/assets/matheus.jpg" />
+                </div>
+                <div class="company-card-contributor-box-about">
+                  <h1 class="company-card-contributor-name">
+                    Matheus Henrique
+                  </h1>
+                  <span class="company-card-contributor-class">Fundador</span>
+                  <p class="company-card-contributor-about">
+                    Scrum Master da equipe.
+                  </p>
+                </div>
+              </div>
+
+              <div class="company-card-contributor">
+                <div class="company-card-contributor-box-img">
+                  <img src="./src/assets/valmor.jpg" />
+                </div>
+                <div class="company-card-contributor-box-about">
+                  <h1 class="company-card-contributor-name">Valmor Machado</h1>
+                  <span class="company-card-contributor-class">Fundador</span>
+                  <p class="company-card-contributor-about">
+                    Product Owner da equipe.
+                  </p>
+                </div>
+              </div>
+
+              <div class="company-card-contributor">
+                <div class="company-card-contributor-box-img">
+                  <img src="./src/assets/carlos.jpg" />
+                </div>
+                <div class="company-card-contributor-box-about">
+                  <h1 class="company-card-contributor-name">Carlos Gomes</h1>
+                  <span class="company-card-contributor-class"
+                    >Programador</span
+                  >
+                  <p class="company-card-contributor-about">
+                    Desenvolvedor da equipe.
+                  </p>
+                </div>
+              </div>
+
+              <div class="company-card-contributor">
+                <div class="company-card-contributor-box-img">
+                  <img src="./src/assets/wesley.jpg" />
+                </div>
+                <div class="company-card-contributor-box-about">
+                  <h1 class="company-card-contributor-name">Wesley Oliveira</h1>
+                  <span class="company-card-contributor-class"
+                    >Programador</span
+                  >
+                  <p class="company-card-contributor-about">
+                    Desenvolvedor da equipe.
+                  </p>
+                </div>
+              </div>
+
+              <div class="company-card-contributor">
+                <div class="company-card-contributor-box-img">
+                  <img src="./src/assets/hanan.jpg" />
+                </div>
+                <div class="company-card-contributor-box-about">
+                  <h1 class="company-card-contributor-name">Hanan Ortiz</h1>
+                  <span class="company-card-contributor-class">Analista</span>
+                  <p class="company-card-contributor-about">
+                    Desenvolvedor da equipe.
+                  </p>
+                </div>
+              </div>
+
+              <div class="company-card-contributor">
+                <div class="company-card-contributor-box-img">
+                  <img src="./src/assets/victor.jpg" />
+                </div>
+                <div class="company-card-contributor-box-about">
+                  <h1 class="company-card-contributor-name">Victor Veniti</h1>
+                  <span class="company-card-contributor-class">Analista</span>
+                  <p class="company-card-contributor-about">
+                    Desenvolvedor da equipe.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-container">
+          <h1>Oi</h1>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
