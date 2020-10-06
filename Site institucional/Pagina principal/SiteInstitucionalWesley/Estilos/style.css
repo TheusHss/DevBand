@@ -1,0 +1,197 @@
+body {
+    width: 100;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+   
+}
+
+.redes {
+    width: 45px;
+    cursor: pointer;
+     
+    
+}
+.navbar {
+    background-color:black;
+    height: 100px;
+    border-radius: 5px;
+    border: solid;
+    -webkit-border-radius: 10px 20px;
+    opacity : 0.9;
+    width: 100%;
+    border-color: white;
+
+}
+
+.container {
+    height: 100px;
+    margin-left: 20px;
+    border-radius: 5px;
+    
+}
+
+.navbar ul {
+    float: right;
+    text-transform: uppercase;
+    margin-right: 50px;
+    padding-top: 20px;
+}
+
+.navbar li {
+    float: left;
+    list-style: none;
+    margin-left: 20px;
+
+}
+.navbar a{
+    color: white;
+    padding-left: 20px;
+}
+
+img{
+    float: left;
+    width: 100px;
+    padding-left: 10px;
+    padding-top: 20px;
+}   
+
+.centro{
+    background-color:white;
+    color: white;
+    height: 500px;
+    margin-top: 20px;
+    opacity : 1;
+    width: 100%;
+    background-image: url(fundo3.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    -webkit-border-radius: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.centro h1{
+    padding-top: 60px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;  
+
+}
+.produtos{
+    background-color:white;
+    color: white;
+    height: 250px;
+    margin-right: 5px;
+    opacity : 1;
+    width: 250px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px 20px;
+    float: left;
+    margin-left: 220px;
+    margin-top: 10px;    
+}
+
+.sensores{
+    background-color:white;
+    color: white;
+    height: 250px;
+    margin-right: 5px;
+    opacity : 1;
+    width: 250px;
+    border-radius: 5px;
+    -webkit-border-radius: 10px 20px;
+    float: left;
+    margin-top: 10px;
+}
+
+.sobre{
+    background-color:white;
+    color: white;
+    height: 250px;
+    margin-right: 5px;
+    opacity : 1;
+    width: 250px;
+    border-radius: 5px;
+    -webkit-border-radius: 10px 20px;
+    float: left;
+    margin-top: 10px;
+}
+
+.registros{
+    background-color:white;
+    color: white;
+    height: 250px;
+    margin-right: 5px;
+    opacity : 1;
+    width: 250px;
+    border-radius: 5px;
+    -webkit-border-radius: 10px 20px;
+    float: left;
+    margin-top: 10px;
+}
+
+.telas{
+    padding-left:30px ;
+}
+
+
+.textoblocos{
+    color: black;
+    padding-left: 50px;
+    float: left;
+
+
+}
+.iconsdiv{
+    float: left;
+    padding-left: 80px;
+    
+
+
+}
+
+.botao{
+    margin-top: 30px;
+    background-color: black;
+    width: 100%;
+    height: 50px;
+    text-decoration:none;
+    border-radius: 10px;
+    border: solid;
+    border-color: white;
+    text-transform: uppercase;
+    color: white;
+}
+
+.botao:hover{
+
+    background-color: blue;
+}
+a{
+    text-decoration:none;
+    text-transform: uppercase;
+}
+
+.footer {
+    margin-top: 300px;
+    background-color: white;
+    height: 100px;
+    border-radius: 5px;
+    border: solid;
+    -webkit-border-radius: 10px 20px;
+    opacity: 0.9;   
+    display: flex; 
+}
+.footer ul {
+    float: right;
+    padding-left: 640px;
+}
+
+.footer li {
+    padding-left: 10px;
+    float: right;
+    list-style: none;
+    
+    }
