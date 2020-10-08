@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevBand-Home</title>
+    <title>DevBand-Login</title>
     <link rel="stylesheet" href="estillos-Hanan.css">
 </head>
-
 <body>
     <div class="navbar">
         <img class="img" src="logo.png" alt="logo da empresa">
@@ -20,21 +18,26 @@
                <li>Home</li>
            </ul>
         </div>
-    </div>
+    </div> <br><br>
     <center>
-    <div class="medio">
-        <h1>Seja bem vindo à DevBand!</h1> <br><br>
-        Clique em saiba mais e conheça algumas curiosidades sobre nossa empresa e nossos objetivos <br><br>
-        <button onclick="sabermais()">Saiba mais</button>
-    </div>
-    <div id="saber">
-    </div>
-</center>
+        <input type="text" placeholder="E-mail" class="login_box" id="e_mail"> <br><br><br><br>
+        <input type="text" placeholder="Senha" class="login_box" id="senha_"> <br><br>
+        <button onclick="entrar()" class="login_box">
+            Fazer Login
+        </button>
+    </center> 
+    
+    
 </body>
 </html>
 <script>
-function sabermais(){
-    saber.innerHTML=`Nós da DevBand fazemos a instalação e o monitoramento de sensores de <b>Temperatura</b> e <b>Humidade</b>
-    para as indústrias farmacêuticas`;    
-}
+    function entrar(){
+    var email = e_mail.value;
+    var senha = senha_.value;
+    if(email == "hananferreira2002@gmail.com"){
+        alert("você será direcionado para a página inicial!!")
+    }else{
+        alert("email ou senha estão inválidos!");
+    }
+    }
 </script>

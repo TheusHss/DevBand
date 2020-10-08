@@ -1,4 +1,4 @@
-body{
+body{ 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     background-color: #C0C3C8;
@@ -34,3 +34,8 @@ img{
 button{
     height: 20px;
 }
+.login_box{
+    height: 50px;
+    border-radius: 1%;
+}
+
