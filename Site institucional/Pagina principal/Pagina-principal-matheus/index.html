@@ -13,45 +13,99 @@
     <header class="cabecario">
 
         <div>
-            <img id="sup"onclick="sobre()" src="https://e7.pngegg.com/pngimages/148/70/png-clipart-critical-thinking-reason-brainpop-argument-critical-thinking-icon-orange-logo.png" alt="">
-            <h1 id="sup" onclick="sobre()">Sobre</h1>
+            <img id="sup" src="https://e7.pngegg.com/pngimages/148/70/png-clipart-critical-thinking-reason-brainpop-argument-critical-thinking-icon-orange-logo.png" alt="">
+            <a id="sup" >Sobre</a>
             <img id="sup" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTMj0wx3H6MFNVAkA2E1Qm1AsZA5lwxMZnPKQ&usqp=CAU" alt="">
-            <h1 id="sup" >Suporte</h1>
+            <a id="sup" >Suporte</a>
             <img id="sup" src="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png" alt="">
-            <h1 id="sup">Login</h1> 
+            <a id="sup" onclick="cad()">Login/cadastro</a> 
             <img id="sup" src="https://imagensemoldes.com.br/wp-content/uploads/2020/05/%C3%8Dcone-Casa-PNG-1200x1200.png" alt="">
-            <h1 id="sup">Home</h1> 
+            <a id="sup" onclick="home()">Home</a> 
         </div>
         
-        <img id='logo_header' src="logo.png" alt="">
+        <img id='logo_header' src="logotwo.png" alt="">
     </header>
 
-
-    <div id="ctrP">
+<div id="abas_acesso">
+    <div class="ctrP" >
         Acesso <br>
         Rapido
     </div>
-    <div id="ctrP">
+    <div class="ctrP" >
         Sensores
     </div>
-    <div id="ctrP">
+    <div class="ctrP" >
         Registros
     </div>
-    <div id="ctrP">
+    <div class="ctrP" >
         Contratar <br>
         Pedido
     </div>
+</div>
+<div id="loginId" class="loginClass" style="display: none;">
+    <div id="caixa2" class="box_login1">
+        <h1>Login</h1>
+        <input placeholder="E-mail" type="text" name="" id="email"><br>
+        <input placeholder="Senha" type="text" name="" id="senha">
+        <Button>acessar</Button>
+    </div>
+    <div id="cadastro" class="box_login">
+        <div>
+            <H3>Ja Tem Login?</H3>
+            <img onclick="ja_log()" src="https://icon-library.com/images/sign-in-icon/sign-in-icon-3.jpg" alt="">
+        </div>
+        <div>
+            Empresa <br>
+            <input placeholder="Empresa" type="text" name="" id="marca_emp"> <br>
+            <input placeholder="Razão social" type="text" name="" id="nome_emp"> <br>
+            <input placeholder="Cnpj" type="text" name="" id="cnpj">
+        </div>
+       <div>
+        Endereço <br>
+        <input placeholder="Estado" type="text" name="" id="Estado"><br>
+        <input placeholder="Cidade" type="text" name="" id="cidade"><br>
+        <input placeholder="Logradouro" type="text" name="" id="Logradouro"><br>
+        <input placeholder="Numero" type="text" name="" id="Numero"><br>
+        <input placeholder="Complemento" type="text" name="" id="Complemento">
+       </div>
+       <div>
+        Email <br>
+        <input placeholder="E-mail" type="text" name="" id="email"><br>
+        <input placeholder="Senha" type="text" name="" id="senha">
+        <button>Seguir</button>
+       </div>
+    </div>
+</div>
     <main>
         <img id="mrc" src="logo.png" alt="">
     </main>
-    <div id="sobreresult"></div>
+    <div id="sobre" style="display: flex;" class="sobre"> Olá seja Bem-vindo a DevBand, Somos uma empresa especializada em controlar a temperatura e a umidade de industrias farmaceuticas, conosco não haverá desperdicios de remedios, e ajudará quem mais precisa! </div>
+
+
+          
+     
 </body>
 
 </html>
 <script>
-    // funcao sobre
-    function sobre(){
-        sobreresult.innerHTML='Seja bem vindo a DevBand, <br> Nós somos uma empresa de TI <br> Especializada em soluçoes <br> para sensores de Hospitais e <br> Ambulatórios. <br><br> Atendemos as maiores redes de <br> hospitais de São Paulo, <br> a mais de 5 segundos'
-    };
 
+function cad(){
+    cadastro.style.display="flex"
+    caixa2.style.display="none"
+    loginId.style.display="flex"
+    abas_acesso.style.display="none"
+    sobre.style.display="none"
+}
+function home(){
+    caixa2.style.display="none"
+    loginId.style.display="none"
+    abas_acesso.style.display="flex"
+    sobre.style.display="flex"
+}
+function ja_log(){
+    cadastro.style.display="none"
+    caixa2.style.display="flex"
+    abas_acesso.style.display="none"
+    sobre.style.display="none"
+}
 </script>
