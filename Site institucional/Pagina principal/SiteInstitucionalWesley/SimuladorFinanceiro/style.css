@@ -1,0 +1,86 @@
+h1{
+    margin-top: 5px;
+    font-family:arial,helvetica;
+    float: left;
+    margin-left: 33%;
+}
+
+h2{
+    text-align: center;
+    color: #0c2461;
+    font-family:arial,helvetica;
+    font-size: px;
+
+}
+
+#logotipo{
+    margin-left: 10px;
+    float: left;
+    width: 100px;
+}
+
+ul{
+
+    color: white;
+    float: right;
+    margin-top: 0px;
+    font-family:arial,helvetica;
+    font-size: 20px;
+}
+
+li{
+
+    float: left;
+    padding: 10px;
+    margin: 5px;
+    list-style-type: none;
+}
+#centro{
+
+    text-align: center;
+    font-family:arial,helvetica;
+    margin-top: 30px;
+    color:#0c2461;
+    border: solid;
+    border-radius: 5px;
+    width: 700px;
+    height: 400px;
+    padding-top: 100px;
+    background-color: azure;
+
+    
+}
+
+#cabecalho{
+    background-color: black;
+    width: 100%;
+    height: 80px;
+    color: white;
+    text-align: center;
+    border:solid;
+    border-radius: 5px;
+    border-color: white;
+}
+
+b{
+
+    font-size: 24px;
+    
+
+}
+input{
+    text-align: center;
+    width: 300px;
+    height: 20px;
+
+}
+button {
+    background-color:#0c2461; ;
+    border: solid;
+    border-color: black ;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+  }

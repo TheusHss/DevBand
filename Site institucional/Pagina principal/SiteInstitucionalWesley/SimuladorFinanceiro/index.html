@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet"  href="style.css">
+</head>
+<body style="background-image: url(fundo.jpeg);">
+    
+    <div id="cabecalho">
+        <img src="" id="logotipo"><br>
+        <ul> 
+            <li>Home</li> 
+            <li>Produtos</li> 
+            <li>Sobre</li>  
+        </ul>
+    <h1>  Simulador Financeiro </h1>
+    </div>
+        
+<h2> Simule seu lucro usando nossos serviços a longo prazo </h2>
+
+    <center><div id="centro">
+    
+        <b> Prejuizo mensal<b> <br><br><input id="v" placeholder="R$" > <br><br>
+        
+        <b>Daqui:<b>   <br><br><input id="a" placeholder="Anos"> <br><br>
+        
+        <button onclick="calcular()"> Calcular </button><br><br>
+        
+            <div id="resultado"> </div>
+
+
+    </center></div>
+
+
+</body>
+</html>
+
+
+<script>
+
+function calcular(){
+        var anos = a.value *12;
+        var perca = anos* -100;
+        var lucro = (v.value * anos) +perca;
+        resultado.innerHTML = `Em ${a.value} anos sua empresa tera um lucro estimativo de R$ ${lucro-500}`;
+    }
+
+</script>

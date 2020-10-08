@@ -1,0 +1,146 @@
+
+<!doctype html>
+<html>
+
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+	<script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+	<style>
+
+		@font-face{
+			font-family: Changa One;
+			src: url('font/ChangaOne-Regular.ttf');
+		}
+
+		*{
+			font-family: Changa One;
+		}
+
+		canvas {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+		}
+	</style>
+</head>
+
+<body style="display:flex; align-items: center; flex-direction: column; background-image: url('neve.jpg'); background-repeat: no-repeat; background-size: 100%;"> 
+		<section style="margin-top: 50px;color: #0c2461;">
+			<h1 style="font-size: 40px;">Média: <label id='average'>0.00</label></h1>
+			<h1 style="font-size: 40px;">Média Hora: <label id='averageHour'>0.00</label></h1>
+		</section>
+		<section style="width:75%">
+			<canvas id="chart" style="color: black; font-weight: 2px;"></canvas>
+		<section>
+	<script>
+
+		Chart.defaults.global.defaultFontFamily = "Changa One";
+		var context = document.getElementById("chart").getContext("2d");
+		context.canvas.width = 1000;
+		context.canvas.height = 300;
+        
+        var configuration = {
+			type: 'line',
+			data: {
+				datasets: [{
+					label: "Sensor de Temperatura",
+					type: 'line',
+					borderColor: ['#000000'],
+					backgroundColor: 'rgb(12,36,97,0.7)'
+				}]
+			},
+			options: {
+				legend: {
+            		labels: {
+                		fontSize: 25,
+						fontColor: '#0c2461',
+					}
+        		},
+				scales: {
+					xAxes: [{
+						//type: 'value',
+						distribution: 'series',
+                        ticks: {
+                            beginAtZero:true, 
+							fontColor: "#000000",
+							fontSize: 14,
+						},
+						gridLines: {
+        				color: "#000000"
+						}
+					}],
+					yAxes: [{
+						scaleLabel: {
+							display: true,
+							labelString: 'Temperatura'
+                        },
+                        ticks: {
+                            beginAtZero:true,
+							fontColor: "#000000",
+							fontSize: 14,
+						},
+						gridLines: {
+        				color: "#000000"
+						}
+					}]
+				},
+				animation: {
+					duration: 0
+				}
+			}
+        };
+        
+		var chart = new Chart(context, configuration);
+
+        //Função para obter os dados de temperatura do server
+        //Seria mais interessante fazer isso com WebSocket, porém para fins academicos, os dados serão atualizados via HTTP
+        
+        //Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
+        //hora de montar/atualizar o gráfico
+        this.lastIndexTemp = 0;
+        this.time = 0;
+
+        function get_data(){
+
+            var http = new XMLHttpRequest();
+            http.open('GET', 'http://localhost:3000/api', false);
+            http.send(null);        
+			
+            var obj = JSON.parse(http.responseText);
+			console.log(obj)
+            if (obj.data.length == 0){
+                return;
+            }
+
+            var _lastIndexTemp = this.lastIndexTemp;
+            this.lastIndexTemp = obj.data.length;
+            listTemp = obj.data.slice(_lastIndexTemp);
+
+            listTemp.forEach(data => {
+                //Máximo de 60 itens exibidos no gráfico
+                if (chart.data.labels.length == 10 && chart.data.datasets[0].data.length == 10){
+                    chart.data.labels.shift();
+                    chart.data.datasets[0].data.shift();
+                }
+
+                chart.data.labels.push(this.time++);
+                chart.data.datasets[0].data.push(parseFloat(data));
+                chart.update();
+			});
+			
+			document.getElementById('average').textContent = obj.average;
+			document.getElementById('averageHour').textContent = obj.averageHour;
+		} 
+		
+		get_data();
+
+        setInterval(() => {
+            get_data();
+        }, 3000);
+
+	</script>
+</body>
+
+</html>
