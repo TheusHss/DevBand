@@ -23,7 +23,7 @@
 
     transition: background-color, color 0.3s;
 
-    font: 700 16px Archivo;
+    font: 700 20px Archivo;
     cursor: pointer;
 }
 
@@ -38,4 +38,52 @@
 
 .labs {
     flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+.lab-container {
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 8px;
+    width: 45%;
+    margin: 8px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.lab-container h1 {
+    font: 700 32px Archivo;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lab-container h1 i {
+    margin-left: auto;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.lab-container h1 i:hover {
+    color: #e8d75c;
+}
+
+p.operadores {
+    font: 500 18px Roboto;
+    color: gray;
+}
+
+span.create {
+    font: 500 18px Roboto;
+    color: #333;
+
+    flex: 1;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
