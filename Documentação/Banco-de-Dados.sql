@@ -31,6 +31,8 @@ alter table empresa rename column email to email_empresa;
 alter table empresa rename column senha to senha_empresa;
 alter table empresa add column telefone bigint not null;
 alter table empresa add column CEP bigint not null;
+alter table empresa drop column complemento;
+alter table empresa drop column numero;
 
 -- Criando a tabela Laboratório --
 create table laboratorio(
