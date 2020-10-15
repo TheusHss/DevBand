@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site inicial Valmor</title>
+    <link rel="stylesheet" href="site inicial valmor.css">
+
+</head>
+<body>
+
+    <header>
+        <div class="navbar"> 
+            <img src="logo.png" alt="logodevband">
+            <ul>
+                <li>Home</li>
+                <li>Sobre</li>
+                <li>Login</li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="box">
+            <h1>Nosso Trabalho</h1>   
+            <p> Cuidamos do seu maior bem, que é a vida daqueles que vc ama 
+                atraves de um controle preciso de temperatura e umidade para 
+                pesquisa produção de medicamentos.           
+            </p>
+        </div>
+        <div class="simulador">
+            <h2>Faça seu orçamento</h2>
+            <input type="Number" placeholder="Quantidade de salas" id="salas">
+            <input type="text" placeholder="Tamanho das salas" id="tamanho">
+            <button onclick = "resultado()">Calcular</button>
+            <div id="total"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="rodape">
+         <div class="imglogo"><img src="logo.png" alt="logodevband"></div>
+            <div class="contatos">
+                <img src="https://www.flaticon.com/svg/static/icons/svg/889/889154.svg">
+                <img src="https://www.flaticon.com/svg/static/icons/svg/2673/2673492.svg">
+                <img src="https://www.flaticon.com/svg/static/icons/svg/996/996432.svg">
+            </div>
+        </div>
+
+    </footer>
+</body>
+</html>
+
+<script>
+    function resultado(){
+        var qtd_salas=Number(salas.value);
+        var tamanho_salas=Number(tamanho.value);
+        var calcular=(tamanho_salas*80)*qtd_salas;
+        if (qtd_salas <= 3 && tamanho_salas <25){
+            total.innerHTML=`pela quantidade de salas igual ${qtd_salas} e o tamanho delas de ${tamanho_salas} 
+            <br> concluímos que seu laboratório poderá armazenar ${calcular.toFixed(0)} caixas de medicamentos resfriados`;
+        }
+        else {
+            total.innerHTML=`pela quantidade de salas igual ${qtd_salas} e o tamanho delas de ${tamanho_salas} 
+            <br> concluímos que seu laboratório poderá armazenar ${calcular.toFixed(0)} caixas de medicamentos resfriados`;
+        }
+    }
+
+</script>

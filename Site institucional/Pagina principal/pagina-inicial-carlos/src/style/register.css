@@ -1,0 +1,113 @@
+.content {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+}
+
+.register-box {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+
+  align-self: flex-end;
+
+  margin-bottom: 16px;
+
+  border-bottom: 1px solid black;
+}
+
+.draw {
+  flex: 1;
+  text-align: center;
+  color: #222;
+}
+
+.register-content {
+  margin-top: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.register-medium {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-svg {
+  width: 90%;
+  border: 1px solid #333;
+  border-radius: 10px;
+
+  padding: 6px;
+  margin: 4px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-svg input {
+  flex: 1;
+  border: 0;
+
+  padding: 6px 0;
+
+  font: 400 18px Roboto;
+}
+
+.input-svg i {
+  margin: 0 6px;
+  color: #333;
+}
+
+.register-box button {
+  width: 40%;
+  align-self: center;
+
+  padding: 12px 0;
+  border-radius: 10px;
+
+  margin: 12px 0 0 0;
+
+  border: 1px solid #333;
+
+  font: 700 18px Archivo;
+  color: white;
+  background-color: #333;
+
+  transition: color, background-color 0.3s;
+
+  cursor: pointer;
+}
+
+.register-box button:hover {
+  color: #333;
+  background-color: white;
+}
+
+.register-box a {
+  margin-top: 8px;
+  margin-bottom: 24px;
+  font: 400 16px Roboto;
+  color: gray;
+
+  transition: color 0.3s;
+
+  align-self: center;
+  cursor: pointer;
+}
+
+.register-box a:hover {
+  color: #494949;
+}
