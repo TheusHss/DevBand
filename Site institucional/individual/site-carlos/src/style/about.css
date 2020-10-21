@@ -1,0 +1,104 @@
+section.about-us {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+section.about-us .about-container {
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+
+section.about-us .about-container .about-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+section.about-us .about-container .about-box h1 {
+  font: 700 64px Roboto;
+}
+
+section.about-us .about-container .about-box p {
+  font: 500 16px Archivo;
+  margin: 16px 0 8px 0;
+}
+
+section.about-us .about-container img {
+  max-width: 450px;
+  align-self: flex-end;
+}
+
+/* COMPANY */
+
+.company {
+  border-top: 1px solid #000;
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.company-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.company-card-contributor-container {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.company-container-contributor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.company-container-contributor-title {
+  font: 700 26px Archivo;
+  margin: 24px 0;
+}
+
+.company-card-contributor {
+  border-radius: 8px;
+  width: 80%;
+
+  display: flex;
+  align-items: center;
+}
+
+.company-card-contributor-box-about {
+  flex: 2;
+}
+
+.company-card-contributor-box-img {
+  flex: 1;
+  margin-right: 16px;
+}
+
+.company-card-contributor-box-img img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.company-card-contributor-name {
+  font: 700 24px Archivo;
+}
+
+.company-card-contributor-class {
+  font: 400 16px Archivo;
+  color: gray;
+}
+
+.company-card-contributor-about {
+  margin-top: 14px;
+  font: 400 20px Roboto;
+}
