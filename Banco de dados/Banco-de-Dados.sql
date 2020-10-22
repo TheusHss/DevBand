@@ -1,3 +1,4 @@
+drop database DevBand;
 create database DevBand;
 use DevBand;
 desc empresa;
@@ -8,9 +9,7 @@ desc registro;
 select * from empresa;
 select * from sensor;
 select * from registro;
-select * from empresa, laboratorio where idEmpresa=fk_empresa;
-select * from empresa,laboratorio,usuario where idEmpresa=fk_empresa and idLab=fk_lab_user;
-select * from empresa,laboratorio,sensor, usuario where idEmpresa=fk_empresa and idLab=fk_lab_user and fk_lab_sensor=idLab;
+
 
 -- Criando tabela Empresa --
 create table empresa(
@@ -18,93 +17,84 @@ idEmpresa int primary key auto_increment,
 cnpj char(18) not null,
 razao_social varchar(80) not null,
 nome_fantasia varchar(80),
-estado char(2) not null,
-cidade varchar(50) not null,
-bairro varchar(50) not null,
-logradouro varchar(80) not null,
+cep char(9) not null,
 numero int not null,
 complemento varchar(60),
-email varchar(100) not null,
-senha varchar(15)
+telefone varchar(20) not null,
+email_empresa varchar(100) not null,
+senha_empresa varchar(40) not null,
+CHECK(length(senha_empresa) > 6)
 );
-alter table empresa rename column email to email_empresa;
-alter table empresa rename column senha to senha_empresa;
-alter table empresa add column telefone bigint not null;
-alter table empresa add column CEP bigint not null;
-alter table empresa drop column complemento;
-alter table empresa drop column numero;
+
 
 -- Criando a tabela Laboratório --
 create table laboratorio(
 idLab int primary key auto_increment,
 nome_lab varchar(50) not null,
-fk_empresa int,
+fk_empresa int not null,
 foreign key(fk_empresa) references empresa(idEmpresa)
 );
 
--- Modificando fk_empresa para not null --
-alter table laboratorio modify fk_empresa int not null;
 
 -- Criando a tabela usuario --
 create table usuario(
 idUsuario int primary key auto_increment,
-email varchar(100) not null,
-senha varchar(15) not null,
-fk_laboratorio int not null,
-foreign key(fk_laboratorio) references laboratorio(idLab)
+nome_user varchar(45) not null,
+email_user varchar(100) not null,
+senha_user varchar(60) not null,
+fk_lab_user int not null,
+foreign key(fk_lab_user) references laboratorio(idLab)
 );
-alter table usuario rename column fk_laboratorio to fk_lab_user;
-alter table usuario rename column email to email_user;
-alter table usuario rename column senha to senha_user;
+
 
 -- Criando tabela de sensores --
 create table sensor(
 idSensor int primary key auto_increment,
-nome_sensor varchar(30) not null,
+localizacao_sensor varchar(30) not null,
 status_sensor varchar(20),
 fk_lab_sensor int not null,
 foreign key (fk_lab_sensor) references laboratorio(idLab),
 CHECK(status_sensor = 'ativo' or status_sensor = 'inativo' or status_sensor = 'manutencao')
 );
-alter table sensor add column tipo_sensor char(1) not null;
--- CHECK: 1 = TEMPERATURA, 2 = UMIDADE, 3 = TEMPERATURA E UMIDADE --
-alter table sensor add CHECK( tipo_sensor = '1' or tipo_sensor = '2' or tipo_sensor = '3');
 
 -- Criando tabela registros --
 create table registro(
 idRegistro int primary key auto_increment,
-dataRegistro datetime default current_timestamp,
-indice varchar(5) not null
+data_registro datetime default current_timestamp,
+temperatura varchar(6),
+umidade varchar(4),
+fk_sensor int not null,
+foreign key(fk_sensor) references sensor(idSensor)
 );
-alter table registro add column fk_sensor int not null;
-alter table registro add foreign key(fk_sensor) references sensor(idSensor);
 
 -- Inserindo valor na tabela empresa --
-insert into empresa(idEmpresa, cnpj, razao_social, nome_fantasia, estado, cidade, bairro, logradouro, numero, complemento, email_empresa, senha_empresa, telefone, CEP) values
-(null,'29.785.870/0001-03','Laboratorio Neo Quimica Com E Ind Ltda','Neoquimica','SP','Sao Paulo','Itaquera',' Via Anhanguera',987,'sem complemento','neoquimica01@gmail.com','neoquimica123',11974230899,19999060);
+insert into empresa(idEmpresa, cnpj, razao_social, nome_fantasia, cep, numero, complemento, email_empresa, senha_empresa, telefone) values
+(null, '29.785.870/0001-03', 'Laboratorio Neo Quimica Com E Ind Ltda', 'Neoquimica', '19999060', 987, '', 'neoquimica01@gmail.com', 'neoquimica123', 11974230899),
+(null, '20.785.870/0012-03', 'Laboratorio Xurinxunflai', 'Xurinxunflai', '67122351', 105, '', 'xurinxus123@yahoo.com.br', 'xurinxinhos10', 11982716288)
+;
+
 
 -- Inserindo valores na tabela laboratorio --
 insert into  laboratorio(idLab, nome_lab, fk_empresa) values
-(null,'Laboratório1',1); 
-insert into laboratorio(idLab, nome_lab, fk_empresa) values
-(null,'Laboratório2',1),
-(null,'Laboratório3',1);
+(null,'Laboratório1',1),
+(null,'Laboratório2',2),
+(null,'Laboratório3',2);
 
 -- Inserindo valores na tabela usuario --
-insert into usuario (idUsuario, email_user, senha_user, fk_lab_user) values
-(null,'usuario01@gmail.com','usuario1010',1),
-(null,'usuario02@gmail.com','usuario2020',1),
-(null,'usuario03@gmail.com','usuario3030',1);
+insert into usuario (idUsuario, nome_user, email_user, senha_user, fk_lab_user) values
+(null,'Carlos','usuario01@gmail.com','usuario1010',1),
+(null, 'Matheus','usuario02@gmail.com','usuario2020',2),
+(null, 'Hanan', 'usuario03@gmail.com','usuario3030',3),
+(null, 'Wesley', 'usuario04@gmail.com', 'usuario4040', 2);
 
 -- Inserindo valores na tabela sensor --
-insert into sensor (idSensor, nome_sensor, status_sensor, fk_lab_sensor, tipo_sensor) values
-(null,'sensor1','ativo',2,'1'),
-(null,'sensor2','manutencao',2,'2'),
-(null,'sensor3','ativo',1,'1'),
-(null,'sensor4','inativo',3,'3');
+insert into sensor (idSensor, localizacao_sensor, status_sensor, fk_lab_sensor) values
+(null, 'canto inferior esquerdo', 'ativo', 1),
+(null, 'centro', 'manutencao', 2),
+(null, 'canto superior esquerdo', 'ativo', 3),
+(null, 'canto inferior direito', 'inativo', 2);
 
 -- Inserindo valores na tabela registro --
-insert into registro (idRegistro, indice, fk_sensor) values
-(null,'23.4',3);
-
-
+insert into registro (temperatura, umidade , fk_sensor) values
+('23.5°C', '49%', 1),
+('26.9°C', '35%', 3);
