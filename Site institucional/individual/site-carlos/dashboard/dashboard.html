@@ -10,15 +10,10 @@
 	<link rel="stylesheet" href="style/dashboard.css">
 	<link rel="stylesheet" href="style/globalstyle-dash.css">
 
-	<link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Roboto&display=swap"
-      rel="stylesheet"
-    />
+	<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Roboto&display=swap"
+		rel="stylesheet" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 	<style>
 		canvas {
@@ -33,46 +28,45 @@
 	<div class="container">
 		<div class="nav">
 			<div class="nav-info">
-			<h1>Bem-vindo, <br /><span>NEO QUÍMICA</span></h1>
-			<i class="fa fa-user svg-user" style="font-size: 80px;"></i>
-			
-		</div>
-		<ul>
-			<li><a href="labs.html" class="current">Laboratórios</a></li>
-			<li><a href="#">Informações</a></li>
-			<li><a href="#">Ajuda</a></li>
-			<li><a href="#">Configurações</a></li>
-		</ul>
-		<a href="../index.html">Sair</a>
+				<h1>Bem-vindo, <br /><span>NEO QUÍMICA</span></h1>
+				<i class="fa fa-user svg-user" style="font-size: 80px;"></i>
+
+			</div>
+			<ul>
+				<li><a href="labs.html" class="current">Laboratórios</a></li>
+				<li><a href="#">Informações</a></li>
+				<li><a href="#">Ajuda</a></li>
+				<li><a href="#">Configurações</a></li>
+			</ul>
+			<a href="../index.html">Sair</a>
 		</div>
 
 		<div class="dash">
 			<h1 class="title">Laboratório X - Setor 05</h1>
 
-		<section>
-			<h2>Média: <label id='average'>0.00</label></h2>
-			<h2>Média Hora: <label id='averageHour'>0.00</label></h2>
-		</section>
-		<section style="width:80%">
-			<canvas id="chart"></canvas>
-		<section>
+			<section>
+				<h2>Média: <label id='average'>0.00</label></h2>
+				<h2>Média Hora: <label id='averageHour'>0.00</label></h2>
+			</section>
+			<section style="width:80%">
+				<canvas id="chart"></canvas>
+				<section>
 
 		</div>
 
 
 	</div>
 
-	
+
 </body>
 
 </html>
 
 <script>
-
 	var context = document.getElementById("chart").getContext("2d");
 	context.canvas.width = 1000;
 	context.canvas.height = 300;
-	
+
 	var configuration = {
 		type: 'bar',
 		data: {
@@ -89,7 +83,7 @@
 					//type: 'value',
 					distribution: 'series',
 					ticks: {
-						beginAtZero:true
+						beginAtZero: true
 					}
 				}],
 				yAxes: [{
@@ -98,7 +92,7 @@
 						labelString: 'Temperature'
 					},
 					ticks: {
-						beginAtZero:true
+						beginAtZero: true
 					}
 				}]
 			},
@@ -107,21 +101,21 @@
 			}
 		}
 	};
-	
+
 	var chart = new Chart(context, configuration);
 
 	this.lastIndexTemp = 0;
 	this.time = 0;
 
-	function get_data(){
+	function get_data() {
 
 		var http = new XMLHttpRequest();
 		http.open('GET', 'http://localhost:3000/api', false);
-		http.send(null);        
-		
+		http.send(null);
+
 		var obj = JSON.parse(http.responseText);
 		console.log(obj)
-		if (obj.data.length == 0){
+		if (obj.data.length == 0) {
 			return;
 		}
 
@@ -131,7 +125,7 @@
 
 		listTemp.forEach(data => {
 			//Máximo de 60 itens exibidos no gráfico
-			if (chart.data.labels.length == 10 && chart.data.datasets[0].data.length == 10){
+			if (chart.data.labels.length == 10 && chart.data.datasets[0].data.length == 10) {
 				chart.data.labels.shift();
 				chart.data.datasets[0].data.shift();
 			}
@@ -140,15 +134,14 @@
 			chart.data.datasets[0].data.push(parseFloat(data));
 			chart.update();
 		});
-		
+
 		document.getElementById('average').textContent = obj.average;
 		document.getElementById('averageHour').textContent = obj.averageHour;
-	} 
-	
+	}
+
 	get_data();
 
 	setInterval(() => {
 		get_data();
 	}, 1000);
-
 </script>
