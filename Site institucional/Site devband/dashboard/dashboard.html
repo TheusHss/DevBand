@@ -5,7 +5,7 @@
 	<title>Line Chart</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 	<script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
-	<script src="https://www.chartjs.org/samples/latest/utils.js"></script> 
+	<script src="https://www.chartjs.org/samples/latest/utils.js"></script>
 
 	<link rel="stylesheet" href="style/dashboard.css">
 	<link rel="stylesheet" href="style/globalstyle-dash.css">
@@ -15,14 +15,14 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-		<style>
-	canvas{
-		background-color: white;
-border: black solid 10px;
-		-moz-user-select: none;
-		-webkit-user-select: none;
-		-ms-user-select: none;
-	}
+	<style>
+		canvas {
+			background-color: white;
+			border: black solid 10px;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+		}
 	</style>
 </head>
 
@@ -51,11 +51,14 @@ border: black solid 10px;
 				<h2>Média Hora: <label id='averageHour'>0.00</label></h2>
 			</section>
 
-					<div style="width:90%;">
-							<canvas id="c_grafico"></canvas>
-						</div>
-						<br>
-						<br>
+			<div style="width:90%;">
+				<canvas id="d_grafico"></canvas>
+
+				<br>
+				<canvas id="c_grafico"></canvas>
+				<br>
+				<br>
+			</div>
 		</div>
 
 
@@ -67,16 +70,17 @@ border: black solid 10px;
 
 <script>
 
+
 	var config = {
 		type: 'line',
 		data: {
 			labels: [],
 			datasets: [{
-				label: 'umidade',
-				backgroundColor: window.chartColors.blue,
-				borderColor:["#0B1F66 "],
+				label: 'Tempertaura',
+				backgroundColor: ["#FF0000"],
+				borderColor: ["#FF0000"],
 				data: [],
-				fill: false,
+				fill: false
 			}]
 		},
 		options: {
@@ -106,29 +110,79 @@ border: black solid 10px;
 					display: true,
 					scaleLabel: {
 						display: true,
+						labelString: 'em ºC'
+					}
+				}]
+			}
+		}
+	};
+	var config2 = {
+		type: 'line',
+		data: {
+			labels: [],
+			datasets: [{
+				label: 'umidade',
+				backgroundColor: window.chartColors.blue,
+				borderColor: ["#0B1F66 "],
+				data: [],
+
+			}]
+		},
+		options: {
+			responsive: true,
+			title: {
+				display: true,
+				text: 'Gráfico de histórico de umidade'
+			},
+			tooltips: {
+				mode: 'index',
+				intersect: false,
+			},
+			hover: {
+				mode: 'nearest',
+				intersect: true
+			},
+			scales: {
+				xAxes: [{
+					display: true,
+					scaleLabel: {
+						display: true,
+						labelString: 'Horário da Leitura',
+						fontColor: ["Blue"],
+					}
+				}],
+				yAxes: [{
+					display: true,
+					scaleLabel: {
+						display: true,
 						labelString: 'em %'
 					}
 				}]
 			}
 		}
 	};
-	
 
 	// esse "sortearTemperatura()" será desnecessário quando usarmos o backend futuramente
 
+
 	function sortearTemperatura() {
 		var limiteMin = 0;
-		var limiteMax =0;
+		var limiteMax = 0;
+		var minimoAbsolut = Math.abs(limiteMin);
+		return (Math.random() * (-6) - (-27)).toFixed(1);
+	}
+	function sortearTemperatura2() {
+		var limiteMin = 0;
+		var limiteMax = 0;
 		var minimoAbsolut = Math.abs(limiteMin);
 		return (Math.random() * (-25) - (-60)).toFixed(1);
-		
-
 	}
+
+
+	// esse "registros" será recuperado do backend futuramente
 
 	function recuperarDadosIniciais() {
 
-		// esse "registros" será recuperado do backend futuramente
-	
 		var registros = [
 			{
 				momento: '00:03:42',
@@ -159,47 +213,93 @@ border: black solid 10px;
 				leitura: sortearTemperatura()
 			}
 		];
-
 		var contador = 0;
-
-		// registros.length é a quantidade de itens em "registros"
 		while (contador < registros.length) {
-
 			config.data.labels.push(registros[contador].momento);  // incluir um novo momento
 			config.data.datasets[0].data.push(registros[contador].leitura);  // incluir uma nova leitura
-
-			contador++;
+			contador++
 		}
+	};
 
+	function recuperarDadosIniciais2() {
+
+		var registros2 = [
+			{
+				momento2: '00:03:42',
+				leitura2: sortearTemperatura2()
+			},
+			{
+				momento2: '00:03:52',
+				leitura2: sortearTemperatura2()
+			},
+			{
+				momento2: '00:04:02',
+				leitura2: sortearTemperatura2()
+			},
+			{
+				momento2: '00:04:12',
+				leitura2: sortearTemperatura2()
+			},
+			{
+				momento2: '00:04:22',
+				leitura2: sortearTemperatura2()
+			},
+			{
+				momento2: '00:04:32',
+				leitura2: sortearTemperatura2()
+			},
+			{
+				momento: '00:04:42',
+				leitura2: sortearTemperatura2()
+			}
+		];
+
+		var contador2 = 0;
+		while (contador2 < registros2.length) {
+			config2.data.labels.push(registros2[contador2].momento2);  // incluir um novo momento
+			config2.data.datasets[0].data.push(registros2[contador2].leitura2);  // incluir uma nova leitura
+			contador2++
+		}
 	}
 
 	function receberNovasLeituras() {
 		setTimeout(() => {
-			
+
 			// esses "agora" etc até "momentos" serão desnecessários quando usarmos o backend futuramente
 			var agora = new Date();
 			var hora = agora.getHours();
 			var minuto = agora.getMinutes();
 			var segundo = agora.getSeconds();
-			var momento = `${hora>9?'':'0'}${hora}:${minuto>9?'':'0'}${minuto}:${segundo>9?'':'0'}${segundo}`;
+			var momento = `${hora > 9 ? '' : '0'}${hora}:${minuto > 9 ? '' : '0'}${minuto}:${segundo > 9 ? '' : '0'}${segundo}`;
+			var momento2 = `${hora > 9 ? '' : '0'}${hora}:${minuto > 9 ? '' : '0'}${minuto}:${segundo > 9 ? '' : '0'}${segundo}`;
 
 			// esse "novoRegistro" será recuperado do backend futuramente
+
 			var novoRegistro = {
 				momento: momento,
 				leitura: sortearTemperatura()
 			};
-			
-			// tirando e colocando valores no gráfico
+			var novoRegistro2 = {
+				momento2: momento2,
+				leitura2: sortearTemperatura2()
+			};
+
 			config.data.labels.shift(); // apagar o primeiro
 			config.data.labels.push(novoRegistro.momento); // incluir um novo momento
 			config.data.datasets[0].data.shift();  // apagar o primeiro
 			config.data.datasets[0].data.push(novoRegistro.leitura); // incluir uma nova leitura
+			config2.data.labels.shift(); // apagar o primeiro
+			config2.data.labels.push(novoRegistro2.momento2); // incluir um novo momento
+			config2.data.datasets[0].data.shift();  // apagar o primeiro
+			config2.data.datasets[0].data.push(novoRegistro2.leitura2); // incluir uma nova leitura
 
 			// Atualiza o gráfico
-			window.graficoLinha.update();	
+			window.graficoUmi.update();
+			window.graficoTemp.update();
+
 
 			// agendar a chamada da mesma função para daqui a 7 segundos
-			receberNovasLeituras();	
+			receberNovasLeituras();
 
 		}, 1000); // 1000 ms -> 1 segundos
 	}
@@ -207,10 +307,15 @@ border: black solid 10px;
 	function plotarGrafico() {
 		// chamar os 7 últimos registros de leitura
 		recuperarDadosIniciais();
+		recuperarDadosIniciais2();
 
 		// criação do gráfico na página
+
+		var ctx2 = document.getElementById('d_grafico').getContext('2d');
+		window.graficoUmi = new Chart(ctx2, config2);
 		var ctx = document.getElementById('c_grafico').getContext('2d');
-		window.graficoLinha = new Chart(ctx, config);
+		window.graficoTemp = new Chart(ctx, config);
+		
 
 
 		// função que agenda a recuperação da última leitura para daqui a 7 segundos
