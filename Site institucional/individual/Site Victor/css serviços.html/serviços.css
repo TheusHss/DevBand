@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0000009f;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    font-weight: 900;
+}
+
+
+.div_navbar {
+    background-color: rgb(3, 136, 197);
+    color: white;
+    height: 100px;
+    border-bottom: 5px black solid;
+}
+
+.div_navbar ul {
+    float: left;
+    text-transform: uppercase;
+}
+
+.div_navbar h1 {
+    float: left;
+    color: black;
+}
+
+.div_navbar li {
+    list-style: none;
+    margin: 18px;
+    float: left;
+}
+
+.li_meio {
+    float: left;
+    margin-right: 225px;
+    margin-left: 172px;
+    
+}
+
+.div_container {
+    width: 80%;
+    height: auto;
+    margin: auto;
+   
+}
+
+.current {
+    color: red; 
+}
+
+.div_banner {
+    background-color: gray;
+    height: 626px;
+    background-image: url(../imgs/plano\ de\ fundo\ seerviços.jpg);
+    margin-top: 0;
+    background-size: cover;
+    background-attachment: scroll;
+    
+
+    
+}
+
+.div_navbar img {
+    width: 166px;
+    float: left;
+    margin-left: 180px;
+
+}
+
+
+.div_banner h1 {
+    margin: 0;
+    padding-top: 65px;
+    text-align: center;
+}
+
+.div_banner p {
+    padding-left: 217px;
+    padding-right: 272px;
+    font-weight: 900;
+    
+}
+
+.img_img1 {
+    padding-top: 250px;
+    height: 120px;
+    float: right;
+}
+
+.img_img2 {
+    float: right;
+    height: 124px;
+    padding-top: 245px;
+}
+
+.div_navbarbotton {
+background-color: rgb(3, 136, 197);
+    color: white;
+    height: 100px;
+    border-top: 5px black solid;
+    
+
+}
+
+.span_empresa {
+    margin-left: 206px;
+}
