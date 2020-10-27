@@ -42,12 +42,12 @@
         <div class="form">
           <div class="input-svg">
             <i class="fa fa-envelope" style="font-size: 18px"></i>
-            <input type="email" placeholder="Digite seu e-mail..." />
+            <input id='email' type="email" placeholder="Digite seu e-mail..." />
           </div>
 
           <div class="input-svg">
             <i class="fa fa-lock" style="font-size: 24px"></i>
-            <input type="password" placeholder="Digite sua senha..." />
+            <input id="senha" type="password" placeholder="Digite sua senha..." />
           </div>
 
           <button onclick="handleLogin()">Entrar</button>
@@ -115,6 +115,13 @@
 
 <script>
   const handleLogin = () => {
+    var e = email.value
+    var s = senha.value
+    if (e == 'admin@neoquimica' && s =='neoquimica123'){
+
     window.location.href = './dashboard/dashboard.html';
+    } else {
+      alert('usuario ou senha incorretos');
+    }
   };
 </script>
