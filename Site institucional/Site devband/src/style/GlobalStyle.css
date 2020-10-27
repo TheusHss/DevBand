@@ -38,8 +38,8 @@ header {
   width: 80%;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .header-container img {
@@ -50,7 +50,7 @@ header {
 .header-container ul {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 
   width: 40%;
 
@@ -84,7 +84,7 @@ footer {
   flex-direction: column;
 }
 
-.footer-container img {
+.footer-container .footer-info img {
   width: 200px;
 }
 

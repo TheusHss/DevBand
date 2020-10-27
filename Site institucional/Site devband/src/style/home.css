@@ -33,6 +33,7 @@
 .content-container .content-container-img {
   width: 100%;
   max-width: 50%;
+
 }
 
 .content-container .content-container-img img {
@@ -103,4 +104,10 @@ section.links .links-container {
 .links-container .link-box button:hover {
   color: #000;
   background-color: #fff;
+}
+
+@media (max-width: 750px) {
+  .content-container-img {
+    display: none;
+  }
 }
