@@ -58,7 +58,6 @@ header {
   width: 40%;
 
   list-style: none;
-  border: 1px solid white;
 }
 
 .header-container ul li a {
@@ -67,7 +66,6 @@ header {
   text-decoration: none;
 
   transition: opacity 0.3s;
-  border: 1px solid blue;
 }
 
 .header-container ul li a:hover {
