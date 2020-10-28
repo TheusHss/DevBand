@@ -87,15 +87,15 @@ a:hover {
 }
 
 .img_img1 {
-    padding-top: 250px;
-    height: 120px;
+    padding-top: 0;
+    height: 103px;
+    display: inline-block;
     float: right;
 }
 
 .img_img2 {
     float: right;
-    height: 124px;
-    padding-top: 245px;
+    height: 103px;
 }
 
 .div_navbarbotton {
@@ -103,18 +103,91 @@ background-color: rgb(3, 136, 197);
     color: white;
     height: 100px;
     border-top: 5px black solid;
+  
     
-
 }
 
 .div_cadastro {
-    display: block;
-    margin-left: 354px;
+    margin-left: 224px;
+    margin-top: 80px;
+    display: inline-block
+}
+
+.class_empresa {
+    display: inline block; 
+    float: right;
+    margin-right: 100px;
     margin-top: 80px;
 }
 
-.inp_direito {
+.inp_esquerdo {
     margin-left: 50px;
+    margin-top: 10px;
 }
+
+.inp_nome {
+    margin-left: 110px;
+}
+.inp_sobrenome {
+    margin-left: 70px;
+    margin-top: 15px;
+}
+
+.inp_cpf {
+    margin-left: 129px;
+    margin-top: 15px;
+}
+
+.inp_e-mail {
+    margin-left: 106px;
+    margin-top: 15px;
+}
+
+.inp_telefone {
+    margin-left: 93px;
+    margin-top: 15px;
+}
+
+.inp_celular {
+    margin-left: 103px;
+    margin-top: 15px;
+}
+
+.inp_dataNascimento {
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+.inp_nomeUsuario {
+    margin-left: 31px;
+    margin-top: 15px;
+}
+
+.inp_senha {
+    margin-left: 106px;
+    margin-top: 15px;
+}
+
+.inp_confirmarSenha {
+    margin-left: 34px;
+    margin-top: 15px;
+}
+
+.inp_nomeEmpresa {
+    margin-left: 73px;
+}
+
+.inp_nomeFantasia {
+    margin-left: 12px;
+    margin-top: 15px
+}
+
+.inp_cnpj {
+    margin-left: 161px;
+    margin-top: 15px;
+}
+    
+
+
 
 

@@ -20,10 +20,9 @@
                 <div class="li_meio">
             <li><a href="DEVBAND HOME.html">home</a></li>
             <li><a href="DEVBAND SERVIÇOS.html">serviços</a></li>
-            <li class="current"><b>fale consco</b></li>
+            <li><a href="DEVBAND FALE CONOSCO.html">fale consco</a></li>
                 </div>
-            <li><a href="DEVBAND CADASTRE-SE.html">Cadastre-se </a></li>
-            <li><a href="DEVBAND LOGIN.html">Login</a></li>
+            <li class="current"><b>Cadastre-se</b></li>
             </ul>
 
 
@@ -36,25 +35,30 @@
                 <div class="div_container">
                     <h1> Cadastre-se </h1>
                         <div class="div_cadastro">
-                    nome: <input type="text" class="inp_esquerdo">                     <span class="span_empresa">Nome da empresa: <input type="text"></span><br>
-                    sobrenome: <input type="text" class="inp_esquerdo">            <span class="span_empresa">Nome fantasia da empresa: <input type="text"></span><br>
-                    cpf: <input type="text" class="inp_esquerdo">                  <span class="span_empresa">cnpj: <input type="text"><br> </span>
-                    e-mail: <input type="text" class="inp_esquerdo"><br>
-                    telefone: <input type="text" class="inp_esquerdo"> <br>
-                    celular: <input type="text" class="inp_esquerdo"> <br>
-                    data de nascimento: <input type="text" class="inp_esquerdo"><br>
-                    >nome de usuario: <input type="text" class="inp_direito"><br>
-                    senha: <input type="password" class="inp_direito"><br>
-                    confirmar senha: <input type="password" class="inp_direito"><br>
+                    nome: <input type="text" class="inp_nome"> <br>
+                    sobrenome: <input type="text" class="inp_sobrenome"> <br>
+                    cpf: <input type="text" class="inp_cpf"><br>
+                    e-mail: <input type="text" class="inp_e-mail"><br>
+                    telefone: <input type="text" class="inp_telefone"> <br>
+                    celular: <input type="text" class="inp_celular"> <br>
+                    data de nascimento: <input type="text" class="inp_dataNascimento"><br>
+                    nome de usuario: <input type="text" class="inp_nomeUsuario"><br>
+                    senha: <input type="password" class="inp_senha"><br>
+                    confirmar senha: <input type="password" class="inp_confirmarSenha"><br>
+                        </div>
                      
                         
-                    <div id="id_empresa">
-                    <span class="spa_direito" style="float: right;"></span>
-                    <span class="spa_direito" style="float: right;">
-                    <span class="spa_direito" style="float: right;"></span>
+                    <div class="class_empresa">
+                    Nome da empresa: <input class="inp_nomeEmpresa" type="text"><br>
+                    Nome fantasia da empresa: <input class="inp_nomeFantasia"  type="text"><br>>
+                    cnpj: <input class="inp_cnpj"  type="text"><br>
+
+                    <a href="DEVBAND HOME.html"><button onclick="cadastro_realizado()">Inscrever-se</button></a>
                     </div>
+                    <div id="div_imagens">
                     <img src="./imgs/logo.png" alt="Logo Devband" class="img_img1">
                     <img src="./imgs/Bandtec.png" alt="Logo Devband" class="img_img2">
+                    </div>
                         </div>
                     
                 </div>
@@ -69,3 +73,10 @@
         </div>
     <!--/NAV2-->
 </body>
+
+
+<script>
+    function cadastro_realizado() {
+        alert ('cadastro realizado com sucesso');
+    }
+</script>

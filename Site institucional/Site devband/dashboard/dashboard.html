@@ -46,16 +46,18 @@
 		<div class="dash">
 			<h1 class="title">Laboratório X - Setor 05</h1>
 
-			<section>
-				<h2>Média: <label id='average'>0.00</label></h2>
-				<h2>Média Hora: <label id='averageHour'>0.00</label></h2>
+			<section style="display: flex; justify-content: space-evenly;">
+				<h2>temperatura: <label id='average'>0.00</label>ºC</h2>
+
+				<h2>umidade: <label id='average2'>0.00</label>%</h2>
 			</section>
+			 <br>
 
 			<div style="width:90%;">
-				<canvas id="d_grafico"></canvas>
-
-				<br>
+				
 				<canvas id="c_grafico"></canvas>
+				<br>
+				<canvas id="d_grafico"></canvas>
 				<br>
 				<br>
 			</div>
@@ -88,6 +90,7 @@
 			title: {
 				display: true,
 				text: 'Gráfico de histórico de temperatura'
+
 			},
 			tooltips: {
 				mode: 'index',
@@ -110,7 +113,9 @@
 					display: true,
 					scaleLabel: {
 						display: true,
-						labelString: 'em ºC'
+						labelString: 'em ºC',
+						fontColor: ["red"],
+
 					}
 				}]
 			}
@@ -123,7 +128,7 @@
 			datasets: [{
 				label: 'umidade',
 				backgroundColor: window.chartColors.blue,
-				borderColor: ["#0B1F66 "],
+				borderColor: ["#0B1F66"],
 				data: [],
 
 			}]
@@ -261,6 +266,7 @@
 			contador2++
 		}
 	}
+	
 
 	function receberNovasLeituras() {
 		setTimeout(() => {
@@ -288,6 +294,7 @@
 			config.data.labels.push(novoRegistro.momento); // incluir um novo momento
 			config.data.datasets[0].data.shift();  // apagar o primeiro
 			config.data.datasets[0].data.push(novoRegistro.leitura); // incluir uma nova leitura
+			
 			config2.data.labels.shift(); // apagar o primeiro
 			config2.data.labels.push(novoRegistro2.momento2); // incluir um novo momento
 			config2.data.datasets[0].data.shift();  // apagar o primeiro
@@ -301,20 +308,27 @@
 			// agendar a chamada da mesma função para daqui a 7 segundos
 			receberNovasLeituras();
 
+			var temp = sortearTemperatura()
+			var umid=sortearTemperatura2()
+average.innerHTML=`${temp}`
+average2.innerHTML=`${umid}`
+	
 		}, 1000); // 1000 ms -> 1 segundos
 	}
 
+
 	function plotarGrafico() {
+
 		// chamar os 7 últimos registros de leitura
 		recuperarDadosIniciais();
 		recuperarDadosIniciais2();
 
 		// criação do gráfico na página
 
-		var ctx2 = document.getElementById('d_grafico').getContext('2d');
-		window.graficoUmi = new Chart(ctx2, config2);
 		var ctx = document.getElementById('c_grafico').getContext('2d');
 		window.graficoTemp = new Chart(ctx, config);
+		var ctx2 = document.getElementById('d_grafico').getContext('2d');
+		window.graficoUmi = new Chart(ctx2, config2);
 		
 
 
@@ -324,5 +338,6 @@
 
 	// indicando que a função "plotarGrafico" será invocada assim que a página carregar
 	window.onload = plotarGrafico;
+
 
 </script>
