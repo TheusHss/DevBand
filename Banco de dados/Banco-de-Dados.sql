@@ -7,8 +7,12 @@ desc usuario;
 desc sensor;
 desc registro;
 select * from empresa;
+select * from laboratorio;
 select * from sensor;
 select * from registro;
+select * from empresa, laboratorio, usuario, sensor, registro where fk_empresa=idEmpresa and fk_lab_user=idLab and fk_lab_sensor=idLab 
+ and fk_sensor = idSensor;
+
 
 
 -- Criando tabela Empresa --
