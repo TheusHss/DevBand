@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="./src/style/GlobalStyle.css" />
+  <link rel="stylesheet" href="./src/style/register.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Roboto&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <title>Devband - Cadastro</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="header-container">
+        <img src="src/assets/logo.png" />
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Sobre</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="#">Registre-se</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="register-box">
+        <i class="fa fa-user-plus draw" style="font-size: 80px"></i>
+        <div class="register-content">
+          <div class="register-medium">
+            <div class="input-svg">
+              <i class="fa fa-envelope" style="font-size: 18px"></i>
+              <input id="in_email" placeholder="Email..." />
+            </div>
+            <div class="input-svg">
+              <i class="fa fa-lock" style="font-size: 20px"></i>
+              <input id="in_senha" placeholder="Senha..." />
+            </div>
+            <div class="input-svg">
+              <i class="fa fa-check" style="font-size: 14px"></i>
+              <input placeholder="Confirme sua senha..." />
+            </div>
+            <div class="input-svg">
+              <i class="fa fa-building" style="font-size: 18px"></i>
+              <input id="in_nomefantasia" placeholder="Nome da empresa..." />
+            </div>
+            <div class="input-svg">
+              <i class="fa fa-user" style="font-size: 18px"></i>
+              <input id="in_razao" placeholder="Razão Social..." />
+            </div>
+          </div>
+          <div class="register-medium">
+            <div class="input-svg">
+              <i class="fa fa-address-card" style="font-size: 18px"></i>
+              <input id="in_cnpj" placeholder="CNPJ..." />
+            </div>
+            <div class="input-svg">
+              <i class="fa fa-road" style="font-size: 18px"></i>
+              <input id="in_telefone" placeholder="Telefone..." />
+            </div>
+            <div class="input-svg">
+              <i class="fa fa-sort-numeric-asc" style="font-size: 18px"></i>
+              <input id="in_numero" placeholder="Número..." />
+            </div>
+            <div class="input-svg">
+              <i class="fa fa-user" style="font-size: 18px"></i>
+              <input id="in_complemento" placeholder="Complemento..." />
+            </div>
+            <div class="input-svg">
+              <i class="fa fa-university" style="font-size: 18px"></i>
+              <input id="in_cep" placeholder="CEP..." />
+            </div>
+          </div>
+        </div>
+        <button onclick="teste()">Cadastrar</button>
+        <a>Já possuo uma conta</a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-info">
+          <img src="src/assets/logo.png" />
+          <div class="footer-links">
+            <h2>Empresa</h2>
+            <ul>
+              <li><a href="#">Sobre</a></li>
+              <li><a href="#">Trabalhe conosco</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h2>Software</h2>
+            <ul>
+              <li><a href="#">Documentação</a></li>
+              <li><a href="#">Como utilizar</a></li>
+              <li><a href="#">Contribua</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-svgs">
+            <div class="div-svg">
+              <i class="fa fa-facebook svg" style="font-size: 30px"></i>
+            </div>
+            <div class="div-svg">
+              <i class="fa fa-github svg" style="font-size: 30px"></i>
+            </div>
+            <div class="div-svg">
+              <i class="fa fa-linkedin svg" style="font-size: 30px"></i>
+            </div>
+          </div>
+        </div>
+        <div class="footer-contato">
+          <div class="footer-contato-small">
+
+            <div class="footer-box-contato">
+              <i class="fa fa-envelope"></i>
+              <span>devbandoficial@gmail.com</span>
+            </div>
+            <div class="footer-box-contato">
+              <i class="fa fa-instagram"></i>
+              <span>/devbandofficial</span>
+            </div>
+            <div class="footer-box-contato">
+              <i class="fa fa-whatsapp"></i>
+              <span>(11) 9 7455 - 2473</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
+<script>
+  function teste() {
+    const objeto = {
+      email: in_email.value,
+      senha: in_senha.value,
+      cnpj: in_cnpj.value,
+      nome_fantasia: in_nomefantasia.value,
+      razao_social: in_razao.value,
+      telefone: in_telefone.value,
+      numero: in_numero.value,
+      complemento: in_complemento.value,
+      cep: in_cep.value,
+    }
+
+    const options = {
+      method: 'POST',
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      },
+      body: JSON.stringify(objeto),
+    };
+
+    fetch('http://localhost:3333/', options)
+  }
+</script>

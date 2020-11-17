@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="./src/style/login.css" />
+  <link rel="stylesheet" href="./src/style/GlobalStyle.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Roboto&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <title>Devband - Login</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="header-container">
+        <img src="src/assets/logo.png" />
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Sobre</a></li>
+          <li><a href="#">Login</a></li>
+          <li><a href="register.html">Registre-se</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="login-box">
+        <div class="login-draw">
+          <span class="line"></span>
+          <i class="fa fa-user draw" style="font-size: 80px"></i>
+          <span class="line"></span>
+        </div>
+
+        <div class="form">
+          <div class="input-svg">
+            <i class="fa fa-envelope" style="font-size: 18px"></i>
+            <input id='email' type="email" placeholder="Digite seu e-mail..." />
+          </div>
+
+          <div class="input-svg">
+            <i class="fa fa-lock" style="font-size: 24px"></i>
+            <input id="senha" type="password" placeholder="Digite sua senha..." />
+          </div>
+
+          <button onclick="handleLogin()">Entrar</button>
+          <a href="#">Esqueceu sua senha?</a href="#">
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-info">
+          <img src="src/assets/logo.png" />
+          <div class="footer-links">
+            <h2>Empresa</h2>
+            <ul>
+              <li><a href="#">Sobre</a></li>
+              <li><a href="#">Trabalhe conosco</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h2>Software</h2>
+            <ul>
+              <li><a href="#">Documentação</a></li>
+              <li><a href="#">Como utilizar</a></li>
+              <li><a href="#">Contribua</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-svgs">
+            <div class="div-svg">
+              <i class="fa fa-facebook svg" style="font-size: 30px"></i>
+            </div>
+            <div class="div-svg">
+              <i class="fa fa-github svg" style="font-size: 30px"></i>
+            </div>
+            <div class="div-svg">
+              <i class="fa fa-linkedin svg" style="font-size: 30px"></i>
+            </div>
+          </div>
+        </div>
+        <div class="footer-contato">
+          <div class="footer-contato-small">
+
+            <div class="footer-box-contato">
+              <i class="fa fa-envelope"></i>
+              <span>devbandoficial@gmail.com</span>
+            </div>
+            <div class="footer-box-contato">
+              <i class="fa fa-instagram"></i>
+              <span>/devbandofficial</span>
+            </div>
+            <div class="footer-box-contato">
+              <i class="fa fa-whatsapp"></i>
+              <span>(11) 9 7455 - 2473</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
+
+<script>
+  const handleLogin = () => {
+    var e = email.value
+    var s = senha.value
+    if (e == 'admin@admin' && s == '123') {
+
+      window.location.href = './dashboard/labs.html';
+    } else {
+      alert('usuario ou senha incorretos');
+    }
+  };
+</script>
