@@ -180,3 +180,4 @@
 [1005/220849.550:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [1005/220849.551:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [1005/220849.551:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1029/104247.895:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
