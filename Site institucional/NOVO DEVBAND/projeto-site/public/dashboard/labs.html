@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABORATORIOS STAR</title>
+
+    <link rel="stylesheet" href="style/globalstyle-dash.css">
+
+    <link rel="stylesheet" href="./style/labs.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Roboto&display=swap"
+        rel="stylesheet" />
+
+    <script src="https://kit.fontawesome.com/a37da25634.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="nav">
+            <div class="nav-info">
+                <h1>Bem-vindo, <br /><span>NEO QUÍMICA</span></h1>
+                <i class="fa fa-user svg-user" style="font-size: 80px;"></i>
+            </div>
+            <ul>
+                <li><a href="labs.html" class="current">Laboratórios</a></li>
+                <li><a href="#">Informações</a></li>
+                <li><a href="#">Ajuda</a></li>
+                <li><a href="#">Configurações</a></li>
+            </ul>
+            <a href="../index.html">Sair</a>
+        </div>
+        <div class="container-labs">
+            <div class="button">
+                <button onclick="mostrar_cadastro()"><i class="fas fa-plus-circle"
+                        style="font-size: 24px;"></i><span>Novo Lab</span></button>
+            </div>
+
+
+            <div class="div-dos-labs">
+                <div class="info-lab">
+                    <div class="info-lab-header">
+                        <span>
+                            Laboratório NEO_1
+                        </span>
+                        <div>
+                            <i class="fas fa-trash-alt" style="font-size: 22px; margin-right: 8px; color: red;"></i>
+                            <i class="fas fa-cog" style="font-size: 24px;"></i>
+                        </div>
+                    </div>
+                    <div class="info-lab-body">
+                        <div class="container-aviso">
+                            <b>TEMP:</b>
+                            <div class="status">
+                            </div>
+                        </div>
+                        <div class="container-aviso">
+                            <b>UMID:</b>
+                            <div class="status">
+                            </div>
+                        </div>
+                        <i class="fas fa-arrow-right" style="font-size: 32px; align-self: flex-end;"></i>
+                    </div>
+                </div>
+                <div class="info-lab">
+                    <div class="info-lab-header">
+                        <span>
+                            Laboratório NEO_1
+                        </span>
+                        <div>
+                            <i class="fas fa-trash-alt" style="font-size: 22px; margin-right: 8px; color: red;"></i>
+                            <i class="fas fa-cog" style="font-size: 24px;"></i>
+                        </div>
+                    </div>
+                    <div class="info-lab-body">
+                        <div class="container-aviso">
+                            <b>TEMP:</b>
+                            <div class="status">
+                            </div>
+                        </div>
+                        <div class="container-aviso">
+                            <b>UMID:</b>
+                            <div class="status">
+                            </div>
+                        </div>
+                        <i class="fas fa-arrow-right" style="font-size: 32px; align-self: flex-end;"></i>
+                    </div>
+                </div>
+                <div class="info-lab">
+                    <div class="info-lab-header">
+                        <span>
+                            Laboratório NEO_1
+                        </span>
+                        <div>
+                            <i class="fas fa-trash-alt" style="font-size: 22px; margin-right: 8px; color: red;"></i>
+                            <i class="fas fa-cog" style="font-size: 24px;"></i>
+                        </div>
+                    </div>
+                    <div class="info-lab-body">
+                        <div class="container-aviso">
+                            <b>TEMP:</b>
+                            <div class="status">
+                            </div>
+                        </div>
+                        <div class="container-aviso">
+                            <b>UMID:</b>
+                            <div class="status">
+                            </div>
+                        </div>
+                        <i class="fas fa-arrow-right" style="font-size: 32px; align-self: flex-end;"></i>
+                    </div>
+                </div>
+                <div class="info-lab">
+                    <div class="info-lab-header">
+                        <span>
+                            Laboratório NEO_1
+                        </span>
+                        <div>
+                            <i class="fas fa-trash-alt" style="font-size: 22px; margin-right: 8px; color: red;"></i>
+                            <i class="fas fa-cog" style="font-size: 24px;"></i>
+                        </div>
+                    </div>
+                    <div class="info-lab-body">
+                        <div class="container-aviso">
+                            <b>TEMP:</b>
+                            <div class="status">
+                            </div>
+                        </div>
+                        <div class="container-aviso">
+                            <b>UMID:</b>
+                            <div class="status">
+                            </div>
+                        </div>
+                        <i class="fas fa-arrow-right" style="font-size: 32px; align-self: flex-end;"></i>
+                    </div>
+                </div>
+
+
+                
+
+            </div>
+        </div>
+    </div>
+    <div id="container_cadastro" class="container-cadastro">
+        <div class="cadastro">
+            <span>Cadastre seu laboratório</span>
+            <div class="input-container">
+                <input id="name" class="input" type="text" pattern=".+" required />
+                <label class="label" for="name">Nome</label>
+            </div>
+            <div class="cadastro-button">
+                <button onclick="retirar_cadastro()" class="button-left">Cancelar</button>
+                <button class="button-right">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    function mostrar_cadastro() {
+        container_cadastro.style.display = "flex";
+        container.style.opacity = "0.7";
+    }
+    function retirar_cadastro() {
+        container_cadastro.style.display = "none";
+        container.style.opacity = "1";
+    }
+</script>

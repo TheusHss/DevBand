@@ -1,0 +1,96 @@
+section.contato {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+}
+
+section.contato .contato-container {
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  margin-bottom: 40px;
+}
+
+section.contato .contato-container h1 {
+  font: 700 40px Archivo;
+  margin-bottom: 8px;
+}
+
+section.contato .contato-container .form-contato {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contato-container .input-box {
+  display: flex;
+  align-items: center;
+
+  padding: 8px;
+  border: 1px solid #333;
+  border-radius: 8px;
+
+  width: 80%;
+
+  margin: 4px 0;
+}
+
+.contato-container .input-box input {
+  border: 0;
+
+  flex: 1;
+
+  font: 700 16px Roboto;
+  color: #555;
+}
+
+.contato-container .input-box i {
+  margin-right: 8px;
+}
+
+.contato-container .input-box b {
+  font: 700 24px Archivo;
+  color: red;
+}
+
+.contato-container textarea {
+  width: 80%;
+
+  padding: 8px;
+  border: 1px solid #333;
+  border-radius: 8px;
+
+  margin: 16px 0;
+
+  font: 700 16px Archivo;
+
+  min-height: 140px;
+}
+
+.contato-container button {
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 8px;
+
+  width: 80%;
+
+  font: 700 18px Roboto;
+  color: white;
+  background-color: #333;
+
+  cursor: pointer;
+
+  transition: color, background-color 0.3s;
+}
+
+.contato-container button:hover {
+  color: #333;
+  background-color: #fff;
+}

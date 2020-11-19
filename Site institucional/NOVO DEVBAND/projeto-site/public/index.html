@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="./src/style/home.css" />
+  <link rel="stylesheet" href="./src/style/GlobalStyle.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Roboto&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <title>Devband - Home</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="header-container">
+        <img src="src/assets/logo.png" />
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="about.html">Sobre</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Registre-se</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="content-container">
+        <div class="content-container-about">
+          <h1>O principal software para a indústria farmacêutica.</h1>
+          <p>
+            Descubra as nossas soluções e pare agora mesmo de ter prejuízo em
+            sua fábrica farmacêutica. Software de fácil entendimento que
+            auxilia nas suas tarefas diárias, monitorando a temperatura e
+            umidade do ambiente.
+          </p>
+        </div>
+        <div class="content-container-img">
+          <img src="src/assets/undraw_medicine_b1ol.svg" />
+        </div>
+      </div>
+    </section>
+
+    <section class="links">
+      <div class="links-container">
+        <div class="link-box">
+          <img src="src/assets/termometro.png">
+          <h1>Veja nossos serviços</h1>
+          <button>SERVIÇOS</button>
+        </div>
+        <div onclick="simulador()" class="link-box">
+          <img src="src/assets/contabilidade.png">
+          <h1>Simule possíveis lucros</h1>
+          <button>SIMULADOR FINANCEIRO</button>
+        </div>
+        <div class="link-box">
+          <img src="src/assets/empreendimento.png">
+          <h1>Conheça nossa equipe</h1>
+          <button>SOBRE NÓS</button>
+        </div>
+        <div class="link-box">
+          <img src="src/assets/operador.png">
+          <h1>Está com problemas?</h1>
+          <button>SUPORTE</button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-info">
+          <img src="src/assets/logo.png" />
+          <div class="footer-links">
+            <h2>Empresa</h2>
+            <ul>
+              <li><a href="#">Sobre</a></li>
+              <li><a href="#">Trabalhe conosco</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h2>Software</h2>
+            <ul>
+              <li><a href="#">Documentação</a></li>
+              <li><a href="#">Como utilizar</a></li>
+              <li><a href="#">Contribua</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-svgs">
+            <div class="div-svg">
+              <i class="fa fa-facebook svg" style="font-size: 30px"></i>
+            </div>
+            <div class="div-svg">
+              <i class="fa fa-github svg" style="font-size: 30px"></i>
+            </div>
+            <div class="div-svg">
+              <i class="fa fa-linkedin svg" style="font-size: 30px"></i>
+            </div>
+          </div>
+        </div>
+        <div class="footer-contato">
+          <div class="footer-contato-small">
+
+            <div class="footer-box-contato">
+              <i class="fa fa-envelope"></i>
+              <span>devbandoficial@gmail.com</span>
+            </div>
+            <div class="footer-box-contato">
+              <i class="fa fa-instagram"></i>
+              <span>/devbandofficial</span>
+            </div>
+            <div class="footer-box-contato">
+              <i class="fa fa-whatsapp"></i>
+              <span>(11) 9 7455 - 2473</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
+<script>
+  function simulador(){
+    window.location.href="sensores.html"
+  }
+</script>

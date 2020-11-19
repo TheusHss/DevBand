@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevSensor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+ <header id="cab">
+     <img id="logo" src="dev.jpg" alt="">
+         <div id="frase">
+              -O Futuro Dos Sensores- 
+         </div>
+ </header>
+
+ 
+ <div id="esc">
+     <div  id="escolha">
+       <h1>DHT-11</h1>  
+         <input id="qtd" onkeyup="escolhido()" type="number">
+
+     </div>
+     <div id="escolha">
+        <div id="result">
+
+        </div>
+          
+     </div>
+     
+     
+ </div>
+
+</div>
+
+    <script>
+        function escolhido(){
+            
+            var qti= Number(qtd.value) ;
+            var qt=10;
+            var somar= qti * qt ;
+            var qtmdo=150;
+            var qmdo=qti * 20 +qtmdo;
+            var mdo= somar + qmdo;
+            result.innerHTML=`R$${somar} + Mão de obra R$150 + R$20 por aparelho, totalR$${mdo} `;
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
