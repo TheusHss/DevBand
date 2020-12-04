@@ -28,7 +28,6 @@ module.exports = (sequelize, DataTypes) => {
 		timestamps: false,
     });
 
-    Laboratorio.belongsTo(empresa, {foreignKey: 'fkEmpresa', as: 'empresa'});
     
     return Laboratorio;
 };
